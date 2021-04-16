@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "./context";
 
-const Header = ({ user }) => {
-  return <div>This is Header {user.name} Component</div>;
+const Header = () => {
+  const {
+    user: { name, loggedIn },
+  } = useContext(UserContext);
+  return (
+    <header>
+      <div>Hello {name}</div>This is Header Component.
+      <div>you are {loggedIn ? "login" : "not login"}</div>
+    </header>
+  );
 };
 
 export default Header;
