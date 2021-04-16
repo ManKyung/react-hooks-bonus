@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "./Header";
 
-const Screen = () => {
+const Screen = ({ user }) => {
   return (
     <div>
-      <Header />
+      <Header user={user} />
       This is Screen Component
     </div>
   );
