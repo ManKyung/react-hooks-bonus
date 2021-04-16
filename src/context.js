@@ -5,8 +5,11 @@ const LangContext = createContext();
 const Lang = ({ defaultLang, children, translations }) => {
   const [lang, setLang] = useState(defaultLang);
   const hyperTranslate = (text) => {
+    console.log(lang, text);
     if (lang === defaultLang) {
       return text;
+    } else {
+      return translations[lang][text];
     }
   };
   return (
